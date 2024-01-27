@@ -55,7 +55,7 @@ public class Exer01 {
 		while (!pilha.estaVazia()) {
 			
 			
-				System.out.println("desempilhado um elemento da  pilha"
+				System.out.println(" desempilhado um elemento da  pilha "
 				            + pilha.desempilha());
 			
 		}
