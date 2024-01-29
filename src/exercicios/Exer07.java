@@ -9,8 +9,8 @@ public class Exer07 {
 
 		//Usando a classe Pilha ou Stack, desenvolva um algoritmo que
 		//faça a conversão de números decimais para binário.
-		
-		
+
+
 
 		imprimeResultado(2);
 
@@ -19,12 +19,12 @@ public class Exer07 {
 		imprimeResultado(10);
 
 		imprimeResultado(1035);
-		
-		
+
+
 		imprimeResultadoQualquerBase(25,16);
 		imprimeResultadoQualquerBase(10035,8);
 		imprimeResultadoQualquerBase(10035,16);
-		
+
 	}
 
 
@@ -32,24 +32,24 @@ public class Exer07 {
 
 		System.out.println(numero + " em binario e " + decimalBinario(numero));
 	}
-	
-	
-	
+
+
+
 	public static void  imprimeResultadoQualquerBase(int numero , int base) {
 
 		System.out.println(numero + " na base e "+ base +" e "  + decimalQualquerBase(numero,base));
 	}
-	
-	
+
+
 	public static String decimalQualquerBase(int numero, int base) {
 
 
 		if (base >16) {
-			
+
 			throw new IllegalArgumentException();
 		}
-		
-		
+
+
 		Stack<Integer> pilha = new Stack<>();
 		String numBase = "";
 		int resto;
@@ -70,15 +70,10 @@ public class Exer07 {
 			numBase += bases.charAt(pilha.pop());
 		}
 
-		
+
 		return numBase;
 	}
-	
-	
-	
-	
-	
-	
+
 
 
 	public static String decimalBinario(int numero) {
@@ -106,13 +101,13 @@ public class Exer07 {
 
 		return numBinario;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 }
