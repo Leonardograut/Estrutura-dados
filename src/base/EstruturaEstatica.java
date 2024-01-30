@@ -1,9 +1,7 @@
 package base;
 
 public class EstruturaEstatica<T> {
-
-
-
+	
 	protected  T[] elementos;
 
 	protected  int tamanho;
@@ -37,15 +35,12 @@ public class EstruturaEstatica<T> {
 
 		if (!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("Posicao invalida");
-
 		}
-
 		this.aumentaCapacidade();
 		//mover todos  os  elementos
 		for (int i = this.tamanho - 1; i >= posicao; i--) {
 
 			this.elementos[i + 1] = this.elementos[i];
-
 		}
 		this.elementos[posicao] = elemento;
 		this.tamanho++;
@@ -58,7 +53,6 @@ public class EstruturaEstatica<T> {
 		return this.tamanho == 0;
 	}
 
-
 	protected void remove(int posicao){
 		if(!(posicao >=0 && posicao < tamanho)){
 			throw new IllegalArgumentException("Posicao inválida");
@@ -67,9 +61,6 @@ public class EstruturaEstatica<T> {
 			elementos[i] = elementos[i+1] ;
 			tamanho-- ;
 		}}
-
-
-
 
 	private   void aumentaCapacidade() {
 		//para aumentar sempre que o tamanho do vetor for igual ao lenght  capacidade que o vetor tem
@@ -101,9 +92,8 @@ public class EstruturaEstatica<T> {
 			s.append(this.elementos[this.tamanho-1]);
 
 		}
-
 		s.append("]");
-
+		
 		return s.toString();
 	}
 }
