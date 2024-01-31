@@ -33,9 +33,9 @@ public class EstruturaEstatica<T> {
 
 	public boolean adicionar(int posicao, T elemento) {
 
-		if (!(posicao >= 0 && posicao < tamanho)) {
-			throw new IllegalArgumentException("Posicao invalida");
-		}
+//		if (!(posicao < 0 || posicao > tamanho)) {
+//			throw new IllegalArgumentException("Posicao invalida");
+//		}
 		this.aumentaCapacidade();
 		//mover todos  os  elementos
 		for (int i = this.tamanho - 1; i >= posicao; i--) {
