@@ -14,6 +14,9 @@ public class Aula9 {
 		
 		System.out.println(fila);
 		
+		System.out.println(fila.desenfileira());
+		
+		System.out.println(fila);
 	}
 
 }
