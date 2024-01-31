@@ -9,12 +9,12 @@ public class Aula10 {
 	public static void main(String[] args) {
 
 		Queue<Paciente>filaComPrioridade = new PriorityQueue<>(
-				
+
 				// alternativa  em vez  de  usar a funçao  compareTo da Classe  Paciente 
 				new Comparator<Paciente>() {
 					public int compare(Paciente p1 , Paciente p2) {
 
-					  return Integer.valueOf(p1.getPrioridade()).compareTo(p2.getPrioridade());
+						return Integer.valueOf(p1.getPrioridade()).compareTo(p2.getPrioridade());
 					}
 				}
 
