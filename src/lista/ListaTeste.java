@@ -18,6 +18,11 @@ public class ListaTeste {
 
 		lista.adiciona(4);
 		System.out.println(lista);
+		
+		
+		lista.limpa();
+		
+		System.out.println(lista);
 
 	}
 
