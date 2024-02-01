@@ -5,7 +5,7 @@ public class No<T> {
 
 	private T elemento;
 	private No<T> proximo;
-	
+
 	public No(T elemento, No<T> proximo) {
 		this.elemento = elemento;
 		this.proximo = proximo;
@@ -14,9 +14,9 @@ public class No<T> {
 	public No(T elemento ) {
 		this.elemento = elemento;
 		this.proximo =null;
-		
+
 	}
-	
+
 	public T getElemento() {
 		return elemento;
 	}
@@ -29,8 +29,8 @@ public class No<T> {
 	public void setProximo(No<T> proximo) {
 		this.proximo = proximo;
 	}
-	
-	
+
+
 	@Override
 	public String toString() {
 		return "No [elemento=" + elemento + ", proximo=" + proximo + "]";
