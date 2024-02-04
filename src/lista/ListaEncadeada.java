@@ -7,6 +7,10 @@ public class ListaEncadeada<T> {
 	private int tamanho = 0;
 
 	private final int NAO_ENCONTRADO = -1;
+	
+	private final String NAO_EXISTE = "Posiçao nao existe";
+	
+	private final String LISTA_VAZIA = "Lista esta vazia";
 
 	public void adiciona(T elemento) {
 		No<T> celula = new No<T>(elemento);
@@ -72,27 +76,73 @@ public class ListaEncadeada<T> {
 		}
 	}
 
-	
+
 	public T removeInicio() {
 		if (this.tamanho == 0) {
-			throw new  RuntimeException("A lista esta  vazia");
+			throw new  RuntimeException(LISTA_VAZIA);
 		}
 		T removido = this.inicio.getElemento();
 		this.inicio = this.inicio.getProximo();
 		this.tamanho--;
-		
+
 		if (this.tamanho == 0) {
 			this.ultimo = null;
 		}
+
+		return removido;
+	}
+
+	
+	private boolean posicaoNaoExiste(int posicao) {
+		return !(posicao >= 0 && posicao <= this.tamanho);
+	}
+	
+	
+	public T remove(int posicao) {
 		
+		if (this.posicaoNaoExiste(posicao)) {
+			
+			throw new IllegalArgumentException(NAO_EXISTE);
+		}
+		 else if (posicao == 0) {
+			return this.removeInicio();
+		}else if (posicao == this.tamanho -1) {
+			return  this.removeFinal();
+		}
+		No<T> noAnterior = this.buscaNo(posicao -1);
+		No<T> atual = noAnterior.getProximo();
+		No<T> proximo = atual.getProximo();
+		
+		noAnterior.setProximo(proximo);
+		atual.setProximo(null);
+		this.tamanho--;
+		
+		
+		return atual.getElemento();
+	}
+	
+	
+	public T removeFinal() {
+		if (this.tamanho == 0) {
+			throw new RuntimeException(LISTA_VAZIA);
+		}
+		if (this.tamanho == 1) {
+			return this.removeInicio();
+		}
+		No<T>penultimoNo = this.buscaNo(this.tamanho - 2);
+		T removido = penultimoNo.getProximo().getElemento();
+		
+		penultimoNo.setProximo(null);
+		this.ultimo = penultimoNo;
+		this.tamanho--;
 		return removido;
 	}
 	
 
 	private No<T>buscaNo(int posicao){
 
-		if (!(posicao >= 0 && posicao <= this.tamanho)) {
-			throw new IllegalArgumentException("Posicao nao existe");
+		if (this.posicaoNaoExiste(posicao)) {
+			throw new IllegalArgumentException(NAO_EXISTE);
 		}
 
 		No<T> noAtual = this.inicio;
@@ -106,8 +156,6 @@ public class ListaEncadeada<T> {
 
 
 	public T buscaPorPosicao(int posicao) {
-
-
 
 		return this.buscaNo(posicao).getElemento();	
 	}
