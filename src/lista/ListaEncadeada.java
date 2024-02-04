@@ -23,7 +23,6 @@ public class ListaEncadeada<T> {
 		return this.tamanho;
 	}
 
-
 	public void limpa() {
 		for (No<T> atual = this.inicio; atual != null; ) {
 
@@ -73,6 +72,22 @@ public class ListaEncadeada<T> {
 		}
 	}
 
+	
+	public T removeInicio() {
+		if (this.tamanho == 0) {
+			throw new  RuntimeException("A lista esta  vazia");
+		}
+		T removido = this.inicio.getElemento();
+		this.inicio = this.inicio.getProximo();
+		this.tamanho--;
+		
+		if (this.tamanho == 0) {
+			this.ultimo = null;
+		}
+		
+		return removido;
+	}
+	
 
 	private No<T>buscaNo(int posicao){
 

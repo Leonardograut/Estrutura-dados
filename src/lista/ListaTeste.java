@@ -4,42 +4,70 @@ public class ListaTeste {
 
 	public static void main(String[] args) {
 
-	//testeIniciais();
-		
-//		adicionaInicio();
+		//testeIniciais();
 
-		adicionaPosicao();
+		//adicionaInicio();
+
+		removeInicio();
+		//adicionaPosicao();
 	}
-	
-	public static void adicionaInicio() {
+
+
+
+
+	public static void removeInicio() {
 		ListaEncadeada<Integer>lista = new ListaEncadeada<>();
-		
-		lista.adicionaInicio(3);
-		lista.adicionaInicio(2);
-		lista.adicionaInicio(1);
-		
-		System.out.println(lista);
-	}
-	
-	
-	public static void adicionaPosicao() {
-		ListaEncadeada<Integer> lista = new ListaEncadeada<>();
-//		lista.adiciona(-1, 1);
+
+
+		//lista.removeInicio();
 		lista.adiciona(1);
 		lista.adiciona(2);
 		lista.adiciona(4);
-	    //lista.adiciona(5, 0);
-		
-		lista.adiciona(0, 0);//0,1,2,4
-		
-		lista.adiciona(4, 5);//0,1,2,4,5
-		
-		lista.adiciona(2, 3);
-		
+
+		System.out.println("Elemento removido: " + lista.removeInicio());
+		System.out.println("Lista: " +lista);
+
+
+		System.out.println("Elemento removido: " + lista.removeInicio());
+		System.out.println("Lista: " +lista);
+
+		System.out.println("Elemento removido: " + lista.removeInicio());
+		System.out.println("Lista: " +lista);
+
+
+	}
+
+
+
+	public static void adicionaInicio() {
+		ListaEncadeada<Integer>lista = new ListaEncadeada<>();
+
+		lista.adicionaInicio(3);
+		lista.adicionaInicio(2);
+		lista.adicionaInicio(1);
+
 		System.out.println(lista);
 	}
-	
-	
+
+
+	public static void adicionaPosicao() {
+		ListaEncadeada<Integer> lista = new ListaEncadeada<>();
+		//		lista.adiciona(-1, 1);
+		lista.adiciona(1);
+		lista.adiciona(2);
+		lista.adiciona(4);
+		//lista.adiciona(5, 0);
+
+		lista.adiciona(0, 0);//0,1,2,4
+
+		lista.adiciona(4, 5);//0,1,2,4,5
+
+		lista.adiciona(2, 3);
+
+		System.out.println(lista);
+	}
+
+
 	public  static  void testeIniciais() {
 		ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 		lista.adiciona(1);
